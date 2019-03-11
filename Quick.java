@@ -9,14 +9,12 @@ public class Quick{
  *@return the index of the final position of the pivot element.
  */
  int partition (int [] data, int start, int end){
-   int pivot = 0; //index of pivot
+   int pivot Math.random() * data.length; //index of pivot
+   start = data[0];
+   end = data[data.length - 1];
 
-   for(int i = 0; i < data.length - 1; i++){
-     start = data[i];
-     end = data[j];
-   }
- }
+//   while(pivot != (data.length - 1) / 2)
 
 }
 
-// [0, 7, 9, 8, 5]
+// [0, 7, 9, 8, 5, 4] --> 4

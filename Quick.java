@@ -108,7 +108,13 @@ public class Quick{
   }
 }
 
+  private static int[] dutchPartition(int[] data, int start, int end){
 
+  }
+
+  private static void dutchSort(int[] ary, int lo, int hi){
+
+  }
 /*Things to do: (and the order that makes the most sense)
 1-Complete and test partition.
 2-Complete Quickselect using partition

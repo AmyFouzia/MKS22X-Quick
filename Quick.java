@@ -60,12 +60,16 @@ public class Quick{
       int temp2 = data[start-1];
 
       if(data[trackStart] < data[start]){
-
+        data[start-1] = data[trackStart];
+        data[trackStart] = temp2;
+        return start-1;
       }
 
       //swap first and start if num is lesser
       else{
-
+        data[start] = data[trackStart];
+        data[trackStart] = temp1;
+        return start;
       }
     }
 

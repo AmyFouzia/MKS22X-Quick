@@ -32,7 +32,27 @@ public class Quick{
     data[start] = trackPivot;
     start ++;
 
-    
+    //start is greater than pivot --> swap values, move end
+    int first = data[start];
+    int last = data[end];
+
+    while(start != end){
+        if(data[start] > trackPivot){
+          data[start] = last;
+          data[end] = first;
+          end--;
+        }
+
+        //values are equal, 50% chance of swap
+        else if(data[start] == trackPivot && (int)Math.ceil(Math.random()*2) == 1){
+          data[start] = last;
+          data[end] = first;
+          end--;
+        }
+
+        //move start
+        else start++;
+      }
   }
 }
 //  {0, 8, 7, 4, 9}

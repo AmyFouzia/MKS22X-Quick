@@ -9,9 +9,27 @@ public class Quick{
  *@return the index of the final position of the pivot element.
  */
  int partition (int [] data, int start, int end){
-   int pivot Math.random() * data.length; //index of pivot
-   start = data[0];
-   end = data[data.length - 1];
+   if(start != end){
+     int track = start;
+     int midPoint = data[(start+end)/2];
+     int pivot;
+
+
+     //median becomes the pivot
+    if((data[start] <= data[end] && data[start] >= middle) || (data[start] >= data[end] && data[start] <= middle)){
+      pivot = start;
+    }
+    if((data[end] <= data[start] && data[end] >= middle) || (data[end] >= data[start] && data[end] <= middle)){
+      pivot = end;
+    }
+    if((middle <= data[start] && middle >= data[end]) || (middle >= data[start] && middle <= data[end])){
+      pivot = (start+end)/2;
+    }
+
+    
+
+   }
+
 
 //   while(pivot != (data.length - 1) / 2)
 

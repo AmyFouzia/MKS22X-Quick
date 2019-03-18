@@ -10,7 +10,7 @@ public class Quick{
  */
  int partition (int [] data, int start, int end){
    if(start != end){
-     int track = start;
+     int trackStart = start;
      int midPoint = data[(start+end)/2];
      int pivot;
 
@@ -53,12 +53,34 @@ public class Quick{
         //move start
         else start++;
       }
+
+
+      //swap first and start-1 if num is greater
+      int temp1 = data[start];
+      int temp2 = data[start-1];
+
+      if(data[trackStart] < data[start]){
+
+      }
+
+      //swap first and start if num is lesser
+      else{
+
+      }
+    }
+
+   return start;
   }
 }
+
 //  {0, 8, 7, 4, 9}
 /*return the value that is the kth smallest value of the array. k=0 is the smallest
  */
  public static int quickselect(int[] data, int k){
+   return qsHelp(data,k,0,data.length-1);
+ }
+
+ private static int qsHelp(int[]data,int k, int start, int end){
 
  }
 

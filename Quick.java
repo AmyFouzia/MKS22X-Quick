@@ -110,6 +110,12 @@ public class Quick{
 
   private static int[] dutchPartition(int[] data, int start, int end){
     //op- part both sides
+    //randomly choose pivot
+    //swap pivot and first
+    //start [] with values = to pivot
+    //val less than pivot, swap start and val and move up
+    //val = pivot, move up
+    //return [] same as pivot
   }
 
   private static void dutchSort(int[] ary, int lo, int hi){

@@ -16,15 +16,23 @@ public class Quick{
 
 
      //median becomes the pivot
-    if((data[start] <= data[end] && data[start] >= middle) || (data[start] >= data[end] && data[start] <= middle)){
+    if((data[start] <= data[end] && data[start] >= midPoint) || (data[start] >= data[end] && data[start] <= midPoint)){
       pivot = start;
     }
-    if((data[end] <= data[start] && data[end] >= middle) || (data[end] >= data[start] && data[end] <= middle)){
+    if((data[end] <= data[start] && data[end] >= midPoint) || (data[end] >= data[start] && data[end] <= midPoint)){
       pivot = end;
     }
-    if((middle <= data[start] && middle >= data[end]) || (middle >= data[start] && middle <= data[end])){
+    if((midPoint <= data[start] && midPoint >= data[end]) || (midPoint >= data[start] && midPoint <= data[end])){
       pivot = (start+end)/2;
     }
+
+    //swap
+    int trackPivot = data[pivot];
+    data[pivot] = data[start];
+    data[start] = trackPivot;
+    start ++;
+
+    
   }
 }
 //  {0, 8, 7, 4, 9}

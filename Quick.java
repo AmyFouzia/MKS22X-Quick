@@ -97,7 +97,7 @@ public class Quick{
 /*Modify the array to be in increasing order.
  */
  public static void quicksort(int[] data){
-   quicksortHelp(data, 0, data.length-1);
+   dutchSort(data, 0, data.length-1);
  }
 
  private static void quicksortHelp(int[] data2, int low, int high){
@@ -109,11 +109,16 @@ public class Quick{
 }
 
   private static int[] dutchPartition(int[] data, int start, int end){
-
+    //op- part both sides
   }
 
   private static void dutchSort(int[] ary, int lo, int hi){
-
+    //op- sort after parted w dutchPart
+    if(lo<hi){
+      int[] pivot = dutchPartition(ary,lo,hi);
+      dutchSort(ary,lo,pivot[0]-1);
+      dutchSort(ary,pivot[1]+1,hi);
+    }
   }
 /*Things to do: (and the order that makes the most sense)
 1-Complete and test partition.

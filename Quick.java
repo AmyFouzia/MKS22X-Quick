@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Quick{
 
   /*Modify the array such that:
@@ -8,11 +10,11 @@ public class Quick{
  *4. all elements in range that are larger than the pivot element are placed after the pivot element.
  *@return the index of the final position of the pivot element.
  */
- int partition (int [] data, int start, int end){
+ public static int partition (int [] data, int start, int end){
    if(start != end){
      int trackStart = start;
      int midPoint = data[(start+end)/2];
-     int pivot;
+     int pivot = 0;
 
 
      //median becomes the pivot
@@ -33,11 +35,10 @@ public class Quick{
     start ++;
 
     //start is greater than pivot --> swap values, move end
-    int first = data[start];
-    int last = data[end];
-
     while(start != end){
         if(data[start] > trackPivot){
+          int first = data[start];
+          int last = data[end];
           data[start] = last;
           data[end] = first;
           end--;
@@ -45,6 +46,8 @@ public class Quick{
 
         //values are equal, 50% chance of swap
         else if(data[start] == trackPivot && (int)Math.ceil(Math.random()*2) == 1){
+          int first = data[start];
+          int last = data[end];
           data[start] = last;
           data[end] = first;
           end--;
@@ -74,7 +77,6 @@ public class Quick{
     }
 
    return start;
-  }
 }
 
 //  {0, 8, 7, 4, 9}
@@ -86,9 +88,9 @@ public class Quick{
 
  private static int qsHelp(int[]data,int k, int start, int end){
    int pivot = partition(data,start,end);
-   if(pivot < k) return quickselectH(data,k,pivot+1,end);
+   if(pivot < k) return qsHelp(data,k,pivot+1,end);
    if(pivot == k) return data[pivot];
-   if(pivot > k) return quickselectH(data,k,start,pivot-1);
+   if(pivot > k) return qsHelp(data,k,start,pivot-1);
    return -1;
  }
 
@@ -101,8 +103,8 @@ public class Quick{
  private static void quicksortHelp(int[] data2, int low, int high){
   if(!(low > high)){
     int pivot = partition(data2, low, high);
-    quicksort(data2, low, pivot-1);
-    quicksort(data2, pivot+1, high);
+    quicksortHelp(data2, low, pivot-1);
+    quicksortHelp(data2, pivot+1, high);
   }
 }
 

@@ -116,6 +116,33 @@ public class Quick{
     //val less than pivot, swap start and val and move up
     //val = pivot, move up
     //return [] same as pivot
+      int pivot = start + (int)Math.floor(Math.random()*(end-start));
+      int trackPivot = data[pivot];
+      int tracker = start + 1;
+
+      data[pivot] = data[start];
+      data[start] = trackPivot;
+
+      while (tracker<= end){
+        if (data[tracker] < trackPivot){
+          int temp = data[start];
+          data[start] = data[tracker];
+          data[tracker] = temp;
+          start++;
+          tracker++;
+        }
+
+        else if (data[tracker] == trackPivot){
+          tracker++;
+        }
+        else{
+          int temp = data[end];
+          data[end] = data[tracker];
+          data[tracker] = temp;
+          end--;
+        }
+      }
+      return new int[]{start, end};
   }
 
   private static void dutchSort(int[] ary, int lo, int hi){
